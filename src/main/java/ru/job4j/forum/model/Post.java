@@ -1,6 +1,7 @@
 package ru.job4j.forum.model;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 
 public class Post {
@@ -8,6 +9,7 @@ public class Post {
     private String name;
     private String desc;
     private Calendar created;
+    private List<String> comments;
 
     public static Post of(String name) {
         Post post = new Post();
@@ -45,6 +47,14 @@ public class Post {
 
     public void setCreated(Calendar created) {
         this.created = created;
+    }
+
+    public List<String> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<String> comments) {
+        this.comments = comments;
     }
 
     @Override

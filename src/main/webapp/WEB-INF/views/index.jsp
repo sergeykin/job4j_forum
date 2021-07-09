@@ -18,6 +18,10 @@
     <div class="row">
         <h4>Форум job4j</h4>
     </div>
+
+    <div>
+        <a href="<c:url value='/addpost?id=0'/>">Добавить инцидент</a>
+    </div>
     <div class="row">
         <table class="table">
             <thead>
@@ -28,7 +32,11 @@
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
+                    <td><c:out value="${post.id}"/></td>
                     <td><c:out value="${post.name}"/></td>
+                    <td><a href="<c:url value='/editpost?id=${post.id}'/>">...</a></td>
+                    <td><a href="<c:url value='/addcomment?id=${post.id}'/>">комментировать</a></td>
+
                 </tr>
             </c:forEach>
             </tbody>

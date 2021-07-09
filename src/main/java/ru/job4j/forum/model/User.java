@@ -6,7 +6,7 @@ public class User {
     private String username;
     private String password;
 
-    public User of(String username, String password) {
+    public static User of(String username, String password) {
         User user = new User();
         user.username = username;
         user.password = password;
