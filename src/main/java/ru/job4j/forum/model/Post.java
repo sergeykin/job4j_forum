@@ -1,15 +1,20 @@
 package ru.job4j.forum.model;
 
+import javax.persistence.*;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "posts")
 public class Post {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
+    @Column(name = "description")
     private String desc;
     private Calendar created;
-    private List<String> comments;
+//    private List<String> comments;
 
     public static Post of(String name) {
         Post post = new Post();
@@ -17,11 +22,11 @@ public class Post {
         return post;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,14 +52,6 @@ public class Post {
 
     public void setCreated(Calendar created) {
         this.created = created;
-    }
-
-    public List<String> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<String> comments) {
-        this.comments = comments;
     }
 
     @Override
