@@ -18,8 +18,6 @@ import java.util.Properties;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private DataSource ds;
